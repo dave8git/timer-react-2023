@@ -7,13 +7,9 @@ function App() {
   const [timer, setTimer] = useState(null);
 
   const start = () => {
-    if (timer !== null) {
-      clearInterval(timer);
-    }
-
     const newTimer = setInterval(() => {
       setTime(prevTime => prevTime + 1);
-    }, 1);
+    }, 10);
     setTimer(newTimer);
   };
 
@@ -24,11 +20,9 @@ function App() {
   }
 
   const reset = () => {
-
     clearInterval(timer);
     setTimer(null);
     setTime(0);
-
   }
 
   useEffect(() => {
