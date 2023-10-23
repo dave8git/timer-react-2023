@@ -7,10 +7,13 @@ function App() {
   const [timer, setTimer] = useState(null);
 
   const start = () => {
-    const newTimer = setInterval(() => {
-      setTime(prevTime => prevTime + 1);
-    }, 10);
-    setTimer(newTimer);
+
+    if(timer === null) {
+      const newTimer = setInterval(() => {
+        setTime(prevTime => prevTime + 10);
+      }, 10);
+      setTimer(newTimer);
+    }
   };
 
   const stop = () => {
